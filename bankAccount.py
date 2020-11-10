@@ -26,7 +26,7 @@ class BankAccount():
       print(f"Amount Withdrawn: ${amount}")
   
   def get_balance(self):
-    print(f"Account Balance: ${self.balance}")
+    print(f"Account Balance: ${'%.2f' % self.balance}")
 
   def add_interest(self):
     interest = self.balance * 0.00083
@@ -34,7 +34,28 @@ class BankAccount():
 
   def print_receipt(self):
     print(self.full_name)
-    print(f"Account No.: ****${self.account_number[4:]}")
-    print(f"Routing No.: ${self.routing_number}")
-    print(f"Balance: $${self.balance}")
+    print(f"Account No.: ****{self.account_number[4:]}")
+    print(f"Routing No.: {self.routing_number}")
+    print(f"Balance: ${'%.2f' % self.balance}")
     
+luis = BankAccount("Luis Ventura")
+
+luis.print_receipt()
+
+simon = BankAccount("Simon Belmont")
+
+simon.deposit(100)
+
+simon.get_balance()
+
+simon.add_interest()
+
+simon.withdraw(10)
+
+simon.get_balance()
+
+adrian = BankAccount("Adrian Tepes")
+
+adrian.withdraw(10)
+
+adrian.get_balance()

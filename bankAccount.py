@@ -1,9 +1,17 @@
+import random
+
+def account_num(n):
+    starting_range = 10**(n-1)
+    ending_range = (10**n) - 1
+    return str(random.randint(starting_range, ending_range))
+
 class BankAccount():
-  def __init__(self, full_name, account_number, routing_number, balance):
+  def __init__(self, full_name):
     self.full_name = full_name
-    self.account_number = account_number
-    self.routing_number = routing_number
-    self.balance = balance
+    self.account_number = account_num(8)
+    self.routing_number = "121000358"
+    self.balance = 0
+  
 
   def deposit(self, amount):
     self.balance += amount

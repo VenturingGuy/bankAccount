@@ -26,4 +26,7 @@ class BankAccount():
 
   def print_receipt(self):
     print(self.full_name)
+    print(f"Account No.: ****${self.account_number[4:]}")
+    print(f"Routing No.: ${self.routing_number}")
+    print(f"Balance: $${self.balance}")
     
